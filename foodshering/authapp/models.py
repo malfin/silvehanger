@@ -11,8 +11,7 @@ from django.db import models
 # Ссылка на страницу «ВКонтакте»
 # Телефон
 # Дата рождения
-#
-#
+
 class UserProfile(AbstractUser):
     class Status(models.TextChoices):
         Volunteer = 'v', 'Волонтёр'
