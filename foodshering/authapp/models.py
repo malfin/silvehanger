@@ -22,6 +22,7 @@ class UserProfile(AbstractUser):
     first_name = models.CharField(verbose_name='Имя', max_length=128)
     last_name = models.CharField(verbose_name='Фамилия', max_length=128)
     status = models.CharField(verbose_name='Статус', choices=Status.choices, default=Status.Volunteer, max_length=1)
+    confirm = models.BooleanField(verbose_name='Подтверждён', default=False)
 
     def __str__(self):
         return f'{self.username} | {self.first_name} | {self.last_name}'
