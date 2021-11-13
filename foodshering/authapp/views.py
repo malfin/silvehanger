@@ -31,9 +31,7 @@ def logout(request):
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
-        print(form)
         if form.is_valid():
-            print(form.fields)
             form.save()
             return HttpResponseRedirect(reverse('authapp:login'))
     else:
