@@ -1,54 +1,55 @@
 {% extends 'mainapp/layouts/app.html' %}
 {% load static %}
 {% block content %}
-<div class="frame">
-    <div class="content main">
-        <div class="main_left">
-            <div class="main_left_slider" style="background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, #303030 100%), url('{% static 'images/slider-image1.jpg'%}') top no-repeat; background-size: cover">
-                <div class="main_left_slider_title h1">ДВИЖЕНИЕ ФУДШЕРИНГ</div>
-                <div class="main_left_slider_info">
-                    <div class="main_left_slider_info-text">
-                        Присоединяйтесь и помогайте нам спасать пригодные  продукты от выбрасывания
-                    </div>
-                    <a href="{% url 'authapp:login' %}">
-                        <div class="main_left_slider_info-button">
-                            присоединиться
+    <div class="frame">
+        <div class="content main">
+            <div class="main_left">
+                <div class="main_left_slider"
+                     style="background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, #303030 100%), url('{% static 'images/slider-image1.jpg' %}') top no-repeat; background-size: cover">
+                    <div class="main_left_slider_title h1">ДВИЖЕНИЕ ФУДШЕРИНГ</div>
+                    <div class="main_left_slider_info">
+                        <div class="main_left_slider_info-text">
+                            Присоединяйтесь и помогайте нам спасать пригодные продукты от выбрасывания
                         </div>
-                    </a>
+                        <a href="{% url 'authapp:login' %}">
+                            <div class="main_left_slider_info-button">
+                                присоединиться
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="main_left_info">
+                    <div class="main_left_info-title h1 big-title">
+                        Фудшеринг
+                    </div>
+                    <div class="main_left_info-text">
+                        экологическое движение, которое помогает организациям перестать выбрасывать еду,
+                        а людям – получать её бесплатно и помогать другим.
+                    </div>
+                </div>
+            </div>
+            <div class="main_right">
+                <div class="main_right_title">
+                    <div class="main_right_title-text">
+                        Интересная статистика
+                    </div>
+                    <hr>
+                </div>
+                <div class="main_right_statistic-card">
+                    <div class="main_right_statistic-card_title"></div>
+                    <div class="main_right_statistic-card_info">
+                        <div class="main_right_statistic-card_info_image"></div>
+                        <div class="main_right_statistic-card_info_text"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="main_left_info">
-                <div class="main_left_info-title h1 big-title">
-                    Фудшеринг
-                </div>
-                <div class="main_left_info-text">
-                    экологическое движение, которое помогает организациям перестать выбрасывать еду,
-                    а людям – получать её бесплатно и помогать другим.
-                </div>
-            </div>
         </div>
-        <div class="main_right">
-            <div class="main_right_title">
-                <div class="main_right_title-text">
-                    Интересная статистика
-                </div>
-                <hr>
-            </div>
-            <div class="main_right_statistic-card">
-                <div class="main_right_statistic-card_title"></div>
-                <div class="main_right_statistic-card_info">
-                    <div class="main_right_statistic-card_info_image"></div>
-                    <div class="main_right_statistic-card_info_text"></div>
-                </div>
-            </div>
+    </div>
+    <div class="frame white_frame">
+        <div class="content">
+            <h3>123323</h3>
         </div>
-
     </div>
-</div>
-<div class="frame white_frame">
-    <div class="content">
-
-    </div>
-</div>
 {% endblock %}

@@ -7,5 +7,6 @@ app_name = 'mainapp'
 urlpatterns = [
 
     path('', mainapp.index, name='index'),
+    path('lk/', mainapp.lk, name='lk'),
 
 ]
