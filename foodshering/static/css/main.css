@@ -19,7 +19,6 @@ pre {
     font-weight: 800;
 }
 
-
 .marked-text {
     padding: 10px;
     background: #F4F4F4;
@@ -68,6 +67,8 @@ pre {
     background: #F4F4F4;
     cursor: pointer;
     transition: 200ms;
+    text-decoration: none;
+    color: #484848;
 }
 
 .menu {
