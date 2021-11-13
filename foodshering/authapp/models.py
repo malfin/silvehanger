@@ -25,6 +25,10 @@ class UserProfile(AbstractUser):
         self.status = 'c'
         self.save()
 
+    def set_confirm(self):
+        self.confirm = True
+        self.save()
+
 
 class Anketa(models.Model):
     username = models.ForeignKey(UserProfile, verbose_name='пользователь', on_delete=models.PROTECT)

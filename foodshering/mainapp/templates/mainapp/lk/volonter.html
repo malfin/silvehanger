@@ -51,23 +51,25 @@
                         <div class="sm-title h1">Поздравляем с регистрацией!</div>
                         <div class="h1">Теперь вам доступно прохождение курса волонтёра Фудшеринга!</div>
                     </div>
-                    <div class="cabinet_after-regist_button"> Начать обучение!</div>
+                    <a href="{% url 'authapp:confirm_user' request.user.id %}">
+                        <div class="cabinet_after-regist_button"> Начать обучение!</div>
+                    </a>
                     <div class="cabinet_after-regist_text">Пройдите обучающий курс и успешно ответьте на 12 вопросов для
                         того чтобы стать волонтёром Фудшеринга
                     </div>
                     <div class="cabinet_after-regist_text big-text h1">Почему быть волонтёром это хорошо?</div>
                     <div class="cabinet_after-regist_pluses">
                         <div class="cabinet_after-regist_plus">
-                            <a href="{% url '' %}">
-                                <div class="cabinet_after-regist_plus_image">
-                                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect y="18" width="50" height="14" fill="#31D6AE"/>
-                                        <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
-                                    </svg>
 
-                                </div>
-                            </a>
+                            <div class="cabinet_after-regist_plus_image">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="18" width="50" height="14" fill="#31D6AE"/>
+                                    <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
+                                </svg>
+
+                            </div>
+
                             <div class="cabinet_after-regist_plus_title big-text h1"> ПЕРВЫЙ ПЛЮС</div>
                             <div class="cabinet_after-regist_plus_text">
                                 Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть
