@@ -12,11 +12,12 @@ from django.db import models
 # Телефон
 # Дата рождения
 
-class UserProfile(AbstractUser):
-    class Status(models.TextChoices):
-        Volunteer = 'v', 'Волонтёр'
-        Coordinator = 'c', 'Координатор'
+class Status(models.TextChoices):
+    Volunteer = 'v', 'Волонтёр'
+    Coordinator = 'c', 'Координатор'
 
+
+class UserProfile(AbstractUser):
     email = models.EmailField(verbose_name='Почта')
     first_name = models.CharField(verbose_name='Имя', max_length=128)
     last_name = models.CharField(verbose_name='Фамилия', max_length=128)
