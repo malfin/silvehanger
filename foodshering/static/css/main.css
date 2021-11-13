@@ -205,19 +205,33 @@ div, input {
     align-items: center;
 }
 
+.button_next_step {
+    background: #31D6AE;
+}
+
+.button_reset, .button_back_step {
+    color: #a1a1a1;
+}
+
+.already_exist {
+    margin: 20px 0;
+}
+.already_exist a{
+    color: #31D6AE;
+}
+
 .button_register {
     width: 200px;
     background: #31D6AE;
     font-weight: bold;
-    color: #F4F4F4;
 }
 
-.button_register:hover {
+.button_register:hover, .button_next_step:hover {
 
-    background: #3ee3a1;
+    background: #3ef0ae;
 }
-.button_register:active {
-    background: #238765;
+.button_register:active, .button_next_step:active {
+    background: #2db589;
 
 }
 
