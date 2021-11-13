@@ -100,9 +100,12 @@ a {
 }
 
 .menu_left_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
-    width: 100px;
-    background: #31D6AE;
+    width: 200px;
+
 }
 
 .menu_right {
