@@ -139,4 +139,13 @@
         </form>
     </div>
 </div>
+
+    {% for item in messages %}
+        <script>
+        alert(
+            '{% if item.tags %}{{ item.tags }}("{{ item }}"){% endif %}'
+        );
+        </script>
+
+    {% endfor %}
 {% endblock %}
