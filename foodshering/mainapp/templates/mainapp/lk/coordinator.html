@@ -2,9 +2,12 @@
 {% load static %}
 {% block content %}
     <div class="frame white_frame">
-        <a href="{% url 'mainapp:create_group' %}" class="btn btn-success">Создать группу</a>
-        <div class="content">
-            <h3>Координатор</h3>
+        <div class="content cabinet_frame">
+
+
+            <div class="md-title h1">Координатор - <span class="marked-text">{{ request.user.first_name }} </span></div>
+            <br>
+            <a href="{% url 'mainapp:create_group' %}" class="button">Создать группу</a>
             {% for item in group %}
                 <h3>Название: {{ item.name }} | <a href="{% url 'mainapp:edit_group' item.id %}">Изменить</a></h3>
                 <ul>
