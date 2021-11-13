@@ -30,3 +30,10 @@ def cabinet(request):
             'group': group,
         }
         return render(request, 'mainapp/lk/coordinator.html', content)
+
+def about():
+        return render(request, 'mainapp/about.html')
+def organizations():
+        return render(request, 'mainapp/organizations.html')
+def participants():
+        return render(request, 'mainapp/participants.html')
