@@ -27,6 +27,10 @@ class UserProfile(AbstractUser):
     def __str__(self):
         return f'{self.username} | {self.first_name} | {self.last_name}'
 
+    def coordinator(self):
+        self.status = 'c'
+        self.save()
+
 
 class Anketa(models.Model):
     username = models.ForeignKey(UserProfile, verbose_name='пользователь', on_delete=models.PROTECT)
