@@ -14,6 +14,10 @@ pre {
     font-family: "Raleway", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
@@ -70,6 +74,14 @@ pre {
     text-decoration: none;
     color: #484848;
 }
+.button_black {
+    background: #303030;
+    color: #FFFFFF;
+}
+.button_green {
+    background: #31D6AE;
+    color: #FFFFFF;
+}
 
 .menu {
     width: 100%;
@@ -124,6 +136,7 @@ pre {
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    z-index: 10;
 
 }
 
@@ -410,8 +423,8 @@ pre {
 }
 
 /* Личный кабинет */
-/* после регистрации, до прохождения курсов*/
 
+/* после регистрации, до прохождения курсов*/
 .cabinet_after-regist {
     margin: 20px 0 0 0 ;
     display: flex;
@@ -445,10 +458,40 @@ pre {
 .cabinet_after-regist_text {
     margin-bottom: 20px;
 }
+
+
+.cabinet_after-regist_pluses {
+    margin-top: 20px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabinet_after-regist_plus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabinet_after-regist_plus > * {
+    width: 170px;
+    margin-bottom: 20px;
+}
+.cabinet_after-regist_plus_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* после прохождения курсов*/
 .cabinet_frame {
     background: #ffffff;
     padding: 30px;
+    margin-bottom: 80px;
+}
+
+.cabinet_title {
+    margin-bottom: 40px;
 }
 
 .cabinet_menu {
@@ -477,25 +520,97 @@ pre {
     margin-bottom: 10px;
 }
 
-.cabinet_after-regist_pluses {
-    margin-top: 20px;
-    width: 600px;
+.cabinet-group_content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cabinet-group_content_coord-image, .cabinet-group_voloteur_image {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: "Montserrat", sans-serif;
+    color: #31D6AE;
+}
+.cabinet-group_content_coord-image {
+    height: 215px;
+    width: 240px;
+    background: #303030;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.cabinet-group_content-vol {
+    width: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cabinet-group_voloneurs {
     display: flex;
     justify-content: space-between;
 }
-
-.cabinet_after-regist_plus {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.cabinet-group_voloteur {
+    width: 90px;
 }
 
-.cabinet_after-regist_plus > * {
-    width: 170px;
-    margin-bottom: 20px;
+.cabinet-group_voloteur_image {
+    position: relative;
+    height: 90px;
+    padding: 10px;
+    background: #303030;
+    margin-bottom: 10px;
 }
-.cabinet_after-regist_plus_image {
+.cabinet-group_voloteur_image .icon {
+    position: absolute;
+}
+.cabinet-group_voloteur_image .telegram-icon {
+    top:0;
+    left: 0;
+}
+.cabinet-group_voloteur_image .locate-icon {
+    top:0;
+    right: 0;
+}
+.cabinet_button {
+    width: 200px;
+    height: 45px;
+    font-size: 13px;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
+    font-weight: bold;
+}
+.cabinet_button svg {
+    margin-left: 10px;
+}
+
+.cabinet-group_buttons_row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cabinet-group_content_statistic_row {
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cabinet-group_content_statistic-title {
+    margin-bottom: 20px;
+}
+
+.cabinet-group_content_group-statistic {
+    width: 240px;
+    padding: 20px;
+    background: #303030;
+    color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -3,12 +3,11 @@
 {% block content %}
     <div class="frame">
         <div class="content cabinet_frame">
-            {% if volonters.confirm %}
-                <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span>
-                </div>
+
+            {% if request.user.confirm %}
+
                 {% if group %}
-                    <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span>
-                    </div>
+                    <div class="cabinet_title md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }} {{ request.user.last_name }}</span> </div>
                     <div class="cabinet_menu">
                         <div class="cabinet_menu-item h1"> Личные данные</div>
                         <div class="cabinet_menu-item h1 active">Группа</div>
@@ -19,7 +18,7 @@
                         {% for item in group %}
                             <div class="cabinet-group_content">
                                 <div class="cabinet-group_content-coord">
-                                    <div class="cabinet-group_content_coord-image">
+                                    <div class="cabinet-group_content_coord-image" style="background:linear-gradient(180deg, rgba(48, 48, 48, 0.5) 0%, #303030 100%), url('{% static 'images/user.png'%}') center no-repeat; background-size: cover">
                                         Координатор
                                     </div>
                                     <div class="cabinet-group_content_coord-info">
@@ -32,19 +31,70 @@
                                 <div class="cabinet-group_content-vol">
                                     <div class="cabinet-group_voloneurs">
                                         {% for volonters in item.users_volonter.all %}
-
-                                            {{ volonters.first_name }} {{ volonters.last_name }}
+                                            <div class="cabinet-group_voloteur ">
+                                                <div class="cabinet-group_voloteur_image sm-text" style="background:linear-gradient(180deg, rgba(48, 48, 48, 0.5) 0%, #303030 100%), url('{% static 'images/user.png'%}') center no-repeat; background-size: cover">
+                                                    волонтёр
+                                                </div>
+                                                <div class="cabinet-group_voloteur_info">
+                                                    {{ volonters.first_name }} {{ volonters.last_name }}
+                                                </div>
+                                            </div>
                                         {% endfor %}
                                     </div>
                                     <div class="cabinet-group_buttons">
-                                        <div class="cabinet-group_buttons_row"></div>
-                                        <div class="cabinet-group_buttons_row"></div>
+                                        <div class="cabinet-group_buttons_row">
+                                            <div class="button cabinet_button button_black">Получить акт <br>приёмки-передачи</div>
+                                            <div class="button cabinet_button">
+                                                беседа в Telegram
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1.33333 0C0.604625 0 0 0.604625 0 1.33333V10.6667C0 11.3954 0.604625 12 1.33333
+                                                        12H10.6667C11.3954 12 12 11.3954 12 10.6667V6H10.6667V10.6667H1.33333V1.33333H6V0H1.33333ZM7.33333 0V1.33333H9.72396L3.52865
+                                                        7.52865L4.47135 8.47135L10.6667 2.27604V4.66667H12V0H7.33333Z" fill="#303030"/>
+                                                    </svg>
+                                            </div>
+                                            <div class="button cabinet_button button_black">Загрузить акт приёма</div>
+                                        </div>
+                                        <div class="cabinet-group_buttons_row">
+                                            <div class="button cabinet_button button_green">Замениться</div>
+                                            <div class="button cabinet_button button_black">Загрузить акт приёма</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="cabinet-group_content">
+                                <div class="cabinet-group_content-coord">
+                                    <div class="cabinet-group_content_group-statistic">
+                                        <div class="cabinet-group_content_statistic-title h1">Статистика группы:</div>
+                                        <div class="cabinet-group_content_statistic-info">
+                                            <div class="cabinet-group_content_statistic_row">
+                                                <div class="md-text">Выполнено заказов:</div>
+                                                <div class="main_right_statistic-card_info_text h1">20</div>
+                                            </div>
+                                            <div class="cabinet-group_content_statistic_row">
+                                                <div class="md-text">Спасено продуктов:</div>
+                                                <div class="main_right_statistic-card_info_text h1">132 кг</div>
+                                            </div>
+                                            <div class="cabinet-group_content_statistic_row">
+                                                <div class="md-text">За неделю:</div>
+                                                <div class="main_right_statistic-card_info_text h1">32 кг</div>
+                                            </div>
+                                            <div class="cabinet-group_content_statistic_row">
+                                                <div class="md-text">Нарушений:</div>
+                                                <div class="main_right_statistic-card_info_text h1">0</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cabinet-group_content-vol"></div>
+                            </div>
                         {% endfor %}
+
                     </div>
-                {% endif %}
+                {% else %}
+                    <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }} {{ request.user.last_name }} </span></div>
+                    <div class="sm-title" style="margin: 20px 0"> Поздравляем, теперь вы <span  class="h1">волонтёр</span> !</div>
+                    <div class="big-text"> Вас пока что не добавили в группу, придётся немного подождать, и ваш новый координатор вас найдёт!</div>
+                {% endif  %}
             {% else %}
                 <div class="cabinet_after-regist">
                     <div class="cabinet_after-regist_title">
