@@ -26,6 +26,16 @@ div, input {
     font-size: 72px;
 }
 
+.button {
+
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F4F4F4;
+}
+
 .menu {
     width: 100%;
     background: #484848;
@@ -102,7 +112,6 @@ div, input {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     color: #F4F4F4;
 }
 
@@ -153,7 +162,45 @@ div, input {
     background: #fff;
 }
 
-
 /*РЕГИСТРАЦИЯ ВОЛОНТЁРА ИЛИ КООРДИНАТОРА*/
 
+.register_form {
+    width: 540px;
+    background: #ffffff;
+    padding: 30px;
+}
+
+.form-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.form-title_step {
+    color: #a1a1a1;
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-field label{
+    width: 30%;
+    height: 30px;
+}
+.input-field input{
+
+    width: 65%;
+    height: 30px;
+}
+
+.register_form_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 

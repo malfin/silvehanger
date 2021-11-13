@@ -3,6 +3,7 @@ window.onload = function (ev) {
     if (document.location.pathname === '/account/register/') {
         let firstStep = document.querySelector('.register_form_first_step');
         let secondStep = document.querySelector('.register_form_second_step');
+        let stepBlock = document.querySelector('.form-title_step');
 
         let nextButton = document.querySelector('.button_next_step');
         let backButton = document.querySelector('.button_back_step');
@@ -12,6 +13,7 @@ window.onload = function (ev) {
                 firstStep.classList.add('dis_none');
                 secondStep.classList.remove('dis_none');
                 secondStep.classList.add('dis_block');
+                stepBlock.innerText = '2/2';
             }
         });
 
@@ -21,6 +23,7 @@ window.onload = function (ev) {
                 firstStep.classList.add('dis_block');
                 secondStep.classList.remove('dis_block');
                 secondStep.classList.add('dis_none');
+                stepBlock.innerText = '1/2';
             }
         });
     }
