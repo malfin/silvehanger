@@ -3,7 +3,20 @@
 {% block content %}
     <div class="frame white_frame">
         <div class="content">
-            <h3>Волонётр</h3>
+            {% if group %}
+                <h3>Волонётры</h3>
+                {% for item in group %}
+                    <h3>Координатор: {{ item.user_coordintator.first_name }}
+                        | {{ item.user_coordintator.last_name }}</h3>
+                    <ul>
+                        {% for volonters in item.users_volonter.all %}
+                            <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% else %}
+                <h3>Ты не прошёл тест!</h3>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

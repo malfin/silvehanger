@@ -30,3 +30,8 @@ def cabinet(request):
             'group': group,
         }
         return render(request, 'mainapp/lk/coordinator.html', content)
+    else:
+        content = {
+            'title': 'Личный кабинет | Ошибка',
+        }
+        return render(request, 'mainapp/lk/error.html', content)
