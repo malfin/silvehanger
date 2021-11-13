@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'mainapp/index.html', context)
 
 
-def lk(request):
+def cabinet(request):
     if Group.objects.filter(users_volonter=request.user):
         group = Group.objects.filter(users_volonter=request.user)
         content = {
