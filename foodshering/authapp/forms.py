@@ -29,8 +29,3 @@ class RegisterForm(UserCreationForm, forms.ModelForm):
         for name, item in self.fields.items():
             item.widget.attrs['class'] = f'form-control {name}'
             item.help_text = ''
-
-    # def save(self, commit=True):
-    #     user = super().save(commit=commit)  # call native method
-    #     UserProfile.objects.create(user=user)
-    #     return user
