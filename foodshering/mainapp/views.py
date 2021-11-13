@@ -14,7 +14,7 @@ def cabinet(request):
     if Group.objects.filter(users_volonter=request.user):
         group = Group.objects.filter(users_volonter=request.user)
         content = {
-            'title': 'Личный кабинет | волонтёра',
+            'title': 'Личный кабинет | Волонтёр',
             'group': group,
         }
         return render(request, 'mainapp/lk/volonter.html', content)
@@ -26,7 +26,7 @@ def cabinet(request):
     elif Group.objects.filter(user_coordintator=request.user):
         group = Group.objects.filter(user_coordintator=request.user)
         content = {
-            'title': 'Личный кабинет | координатора',
+            'title': 'Личный кабинет | Координатор',
             'group': group,
         }
         return render(request, 'mainapp/lk/coordinator.html', content)
@@ -38,12 +38,21 @@ def cabinet(request):
 
 
 def about(request):
-    return render(request, 'mainapp/about.html')
+    content = {
+        'title': 'Фудшеринг | О нас',
+    }
+    return render(request, 'mainapp/about.html', content)
 
 
 def organizations(request):
-    return render(request, 'mainapp/organizations.html')
+    content = {
+        'title': 'Фудшеринг | Организациям',
+    }
+    return render(request, 'mainapp/organizations.html', content)
 
 
 def participants(request):
-    return render(request, 'mainapp/participants.html')
+    content = {
+        'title': 'Фудшеринг | Учасникам',
+    }
+    return render(request, 'mainapp/participants.html', content)
