@@ -10,14 +10,23 @@ div, input {
     box-sizing: border-box;
 }
 
+pre {
+    font-family: "Raleway", sans-serif;
+}
+
 .h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
 }
 
+
 .marked-text {
     padding: 10px;
     background: #F4F4F4;
+}
+
+.color-text {
+    color: #31D6AE;
 }
 
 .dis_block {
@@ -211,6 +220,9 @@ div, input {
 
 /*РЕГИСТРАЦИЯ ВОЛОНТЁРА ИЛИ КООРДИНАТОРА*/
 
+.checkbox-field input {
+    border-radius: 0;
+}
 .register_form {
     width: 540px;
     background: #ffffff;
@@ -221,6 +233,7 @@ div, input {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -232,16 +245,41 @@ div, input {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 .input-field label{
     width: 30%;
     height: 30px;
 }
-.input-field input{
-
+.input-field input, .status{
     width: 65%;
     height: 30px;
+}
+.checkbox-field {
+    justify-content: flex-end;
+
+}
+.checkbox-field label{
+    width: 65%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.checkbox-field input{
+
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 5px 20px 5px 0 ;
+}
+
+.input-hint {
+    color: #238765;
+    font-weight: bold;
+    font-size: 12px;
+    margin: -25px 0 15px;
 }
 
 .form_content {
@@ -274,8 +312,8 @@ div, input {
 .button_register {
     width: 200px;
     background: #31D6AE;
-    font-weight: bold;
 }
+
 
 .button_register:hover, .button_next_step:hover {
 
@@ -316,5 +354,5 @@ div, input {
 }
 
 .cabinet-group_title {
-    
+    margin-bottom: 10px;
 }
