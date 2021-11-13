@@ -26,9 +26,7 @@
 <div class="menu">
     <div class="content  menu_content">
         <div class="menu_left">
-            <a href="{% url 'mainapp:index' %}">
-                <div class="menu_left_logo"></div>
-            </a>
+            <a href="{% url 'mainapp:index'%}"><div class="menu_left_logo"></div></a>
         </div>
         <div class="menu_right">
             <div class="menu_right_li"><a href="#">о нас</a></div>
@@ -39,7 +37,7 @@
                 <div class="menu_right_li"><a href="{% url 'authapp:register' %}">регистрация</a></div>
                 <div class="menu_right_li"><a href="{% url 'authapp:login' %}">вход</a></div>
             {% else %}
-                <div class="menu_right_li"><a href="{% url 'mainapp:cabinet' %}">{{ request.user.username }}</a></div>
+                <div class="menu_right_li"><a href="#">{{ request.user.username }}</a></div>
                 <div class="menu_right_li"><a href="{% url 'authapp:logout' %}">Выйти</a></div>
             {% endif %}
 
