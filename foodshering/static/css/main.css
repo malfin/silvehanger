@@ -37,7 +37,6 @@ a {
 }
 .dis_none {
     display: none;
-
 }
 
 .big-title {
@@ -622,4 +621,89 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+/* кабинет админа */
+
+
+.cabinet_menu-item svg {
+    margin-left: 10px;
+}
+
+.cabinet-group_v-groups {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cabinet-group_v-group {
+    position: relative;
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    z-index: 2;
+
+}
+
+.cabinet-group_v-group_open-group {
+    width: 270px;
+    height: 115px;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F4F4F4;
+    transition: 250ms;
+    z-index: 10;
+    cursor: pointer;
+
+}
+
+.cabinet-group_v-group_open-group:hover {
+
+    transform: scale(1.1,1.2);
+}
+
+.v-group_image, .v-group_info {
+    height: 115px;
+}
+
+.v-group_image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 115px;
+    font-family: "Montserrat", sans-serif;
+    color: #31D6AE;
+    background: #303030;
+    font-size: 12px;
+    padding: 10px;
+}
+.v-group_image .icon {
+    position: absolute;
+    cursor: pointer;
+}
+.v-group_image .telegram-icon {
+    top:10px;
+    left: 10px;
+}
+.v-group_image .locate-icon {
+    top:10px;
+    right: 10px;
+}
+
+.v-group_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 13px;
+    width: 140px;
+}
+.v-group_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

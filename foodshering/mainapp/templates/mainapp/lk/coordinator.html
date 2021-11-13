@@ -66,15 +66,15 @@
             {% endfor %}
 
         </div>
-<!--            {% for item in group %}-->
-<!--                <h3>Название: {{ item.name }} | <a href="{% url 'mainapp:edit_group' item.id %}">Изменить</a> | <a-->
-<!--                        href="{% url 'mainapp:delete_group' item.id %}">Удалить</a></h3>-->
-<!--                <ul>-->
-<!--                    {% for volonters in item.users_volonter.all %}-->
-<!--                        <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>-->
-<!--                    {% endfor %}-->
-<!--                </ul>-->
-<!--            {% endfor %}-->
+        {% for item in group %}
+            <h3>Название: {{ item.name }} | <a href="{% url 'mainapp:edit_group' item.id %}">Изменить</a> | <a
+                    href="{% url 'mainapp:delete_group' item.id %}">Удалить</a></h3>
+            <ul>
+                {% for volonters in item.users_volonter.all %}
+                    <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
         </div>
     </div>
 {% endblock %}
