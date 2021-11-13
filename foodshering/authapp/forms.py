@@ -21,7 +21,9 @@ class RegisterForm(UserCreationForm, forms.ModelForm):
             'first_name',
             'last_name',
             'status',
-            'email'
+            'email',
+            'address',
+            'phone_number',
         )
 
     def __init__(self, *args, **kwargs):
