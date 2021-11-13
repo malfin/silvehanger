@@ -9,6 +9,7 @@ date = datetime.now()
 
 doc = DocxTemplate("doc/act.docx")
 context = {
+    'id': 1,
     'name_or_fio': 'Наименование/ФИО',
     'day': date.day,
     'month': date.strftime("%B"),
@@ -17,4 +18,5 @@ context = {
     'fio': 'ФИО',
 }
 doc.render(context)
-doc.save("doc/generated_doc.docx")
+id_name = context.get('id')
+doc.save(f"doc/generated_doc_{id_name}.docx")
