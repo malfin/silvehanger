@@ -2,10 +2,11 @@
 {% load static %}
 {% block content %}
     <div class="frame white_frame">
+        <a href="{% url 'mainapp:create_group' %}" class="btn btn-success">Создать группу</a>
         <div class="content">
             <h3>Координатор</h3>
             {% for item in group %}
-                <h3>Название: {{ item.name }}</h3>
+                <h3>Название: {{ item.name }} | <a href="{% url 'mainapp:edit_group' item.id %}">Изменить</a></h3>
                 <ul>
                     {% for volonters in item.users_volonter.all %}
                         <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>

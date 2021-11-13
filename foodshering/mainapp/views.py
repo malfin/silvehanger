@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
 from mainapp.forms import LoadFileForm, CreateGroupForm
@@ -41,12 +41,39 @@ def cabinet(request):
         return render(request, 'mainapp/lk/error.html', content)
 
 
+def edit_group(request, pk):
+    if request.user.status == 'c' or request.user.is_staff:
+        group = get_object_or_404(Group, id=pk)
+        if request.method == 'POST':
+            form = CreateGroupForm(request.POST, instance=group)
+            if form.is_valid():
+                forms = form.save(commit=False)
+                forms.user_coordintator = request.user
+                forms.save()
+                form.save_m2m()
+                messages.success(request, 'Вы успешно изменили группу!')
+                return HttpResponseRedirect(reverse('mainapp:cabinet'))
+        else:
+
+            form = CreateGroupForm(instance=group)
+        context = {
+            'title': 'Изменить группу',
+            'form': form,
+        }
+        return render(request, 'mainapp/group/create.html', context)
+    else:
+        return HttpResponseRedirect(reverse('mainapp:index'))
+
+
 def create_group(request):
-    if request.user.status == 'c':
+    if request.user.status == 'c' or request.user.is_staff:
         if request.method == 'POST':
             form = CreateGroupForm(request.POST)
             if form.is_valid():
-                form.save()
+                forms = form.save(commit=False)
+                forms.user_coordintator = request.user
+                forms.save()
+                form.save_m2m()
                 messages.success(request, 'Вы успешно создали группу!')
                 return HttpResponseRedirect(reverse('mainapp:cabinet'))
         else:

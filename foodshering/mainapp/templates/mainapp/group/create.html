@@ -4,6 +4,13 @@
     <div class="frame">
         <div class="content cabinet_frame">
             <div class="md-title h1">Создание группы</div>
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button>Сохранить</button>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}

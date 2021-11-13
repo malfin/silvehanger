@@ -46,16 +46,21 @@ window.onload = function (ev) {
         });
 
 
-
-
         registerButton.addEventListener('click', function (ev) {
             document.querySelector('.true_button_register').click();
         });
     }
     if (document.location.pathname === '/account/login/') {
         let registerButton = document.querySelector('.button_register');
-            registerButton.addEventListener('click', function (ev) {
+        registerButton.addEventListener('click', function (ev) {
             document.querySelector('.true_button_register').click();
         });
     }
+
 };
+$(document).ready(function () {
+    $('select[name="users_volonter"]').select2({
+        placeholder: 'Выберите...',
+        maximumSelectionLength: 7,
+    });
+});
