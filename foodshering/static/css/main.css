@@ -2,11 +2,41 @@
 body {
     margin: 0;
     background: #F4F4F4;
+    font-family: "Raleway", sans-serif;
 }
 
 div, input {
     box-sizing: border-box;
 }
+
+.h1 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.menu {
+    width: 100%;
+    background: #484848;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_content {
+    display: flex;
+    justify-content: space-between;
+}
+.menu_right {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    color: #F4F4F4;
+}
+.menu_right_li a {
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
 
 .frame {
     width: 100%;
@@ -27,7 +57,7 @@ div, input {
     width: 640px;
 }
 
-.main_left {
+.main_right {
     width: 290px;
     height: 525px;
     display: flex;
