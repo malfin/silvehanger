@@ -2,6 +2,7 @@
 body {
     margin: 0;
     background: #F4F4F4;
+    color: #303030;
     font-family: "Raleway", sans-serif;
 }
 
@@ -11,6 +12,12 @@ div, input {
 
 .h1 {
     font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+
+.big-title {
+    font-size: 72px;
 }
 
 .menu {
@@ -20,21 +27,39 @@ div, input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .menu_content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.menu_left_logo {
+    height: 50px;
+    width: 100px;
+    background: #31D6AE;
+}
+
 .menu_right {
     width: 600px;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #F4F4F4;
 }
+
 .menu_right_li a {
     text-decoration: none;
     color: #F4F4F4;
+}
+
+.statistic_button {
+    box-sizing: content-box;
+    border: 2px solid #F4F4F4;
+    padding: 10px 20px;
 }
 
 
@@ -55,6 +80,62 @@ div, input {
 
 .main_left {
     width: 640px;
+    height: 525px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main_left_slider, .main_right, .main_left_info  {
+    padding: 30px;
+}
+.main_left_slider {
+    padding-top: 150px;
+    height: 330px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #F4F4F4;
+}
+
+.main_left_slider_title {
+    font-size: 36px;
+}
+
+.main_left_slider_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.main_left_slider_info a {
+    color: #303030;
+    text-decoration: none;
+}
+
+.main_left_slider_info-text {
+    width: 60%;
+}
+.main_left_slider_info-button {
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F4F4F4;
+}
+
+.main_left_info {
+    width: 100%;
+    height: 165px;
+    background: #fff;
+}
+
+.main_left_info-title {
+    margin-top: -20px;
 }
 
 .main_right {
