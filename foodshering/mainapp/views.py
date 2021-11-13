@@ -11,25 +11,25 @@ def index(request):
 
 
 def cabinet(request):
-    if Group.objects.filter(users_volonter=request.user):
-        group = Group.objects.filter(users_volonter=request.user)
-        content = {
-            'title': 'Личный кабинет | волонтёра',
-            'group': group,
-        }
-        return render(request, 'mainapp/lk/volonter.html', content)
-    elif request.user.is_staff:
-        content = {
-            'title': 'Личный кабинет | Администратор',
-        }
-        return render(request, 'mainapp/lk/admin.html', content)
-    elif Group.objects.filter(user_coordintator=request.user):
+    if Group.objects.filter(user_coordintator=request.user):
         group = Group.objects.filter(user_coordintator=request.user)
         content = {
             'title': 'Личный кабинет | координатора',
             'group': group,
         }
         return render(request, 'mainapp/lk/coordinator.html', content)
+    elif request.user.is_staff:
+        content = {
+            'title': 'Личный кабинет | Администратор',
+        }
+        return render(request, 'mainapp/lk/admin.html', content)
+    elif Group.objects.filter(users_volonter=request.user):
+        group = Group.objects.filter(users_volonter=request.user)
+        content = {
+            'title': 'Личный кабинет | волонтёра',
+            'group': group,
+        }
+        return render(request, 'mainapp/lk/volonter.html', content)
     else:
         content = {
             'title': 'Личный кабинет | Ошибка',
