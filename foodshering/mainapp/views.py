@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
-from mainapp.forms import LoadFileForm, CreateGroupForm
+from mainapp.forms import CreateGroupForm
 from mainapp.models import Group
 
 
@@ -85,6 +85,12 @@ def create_group(request):
         return render(request, 'mainapp/group/create.html', context)
     else:
         return HttpResponseRedirect(reverse('mainapp:index'))
+
+
+def delete_group(request, pk):
+    group = get_object_or_404(Group, id=pk)
+    group.delete()
+    return HttpResponseRedirect(reverse('mainapp:cabinet'))
 
 
 def about(request):

@@ -2,10 +2,11 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
 from authapp.forms import LoginForm, RegisterForm
+from authapp.models import UserProfile
 
 
 def login(request):
@@ -44,9 +45,14 @@ def register(request):
     else:
         form = RegisterForm()
 
-
     context = {
         'title': 'регистрация',
         'form': form,
     }
     return render(request, 'authapp/register.html', context)
+
+
+def confirm_user(request, pk):
+    user = get_object_or_404(UserProfile, id=pk)
+    user.set_confirm()
+    return HttpResponseRedirect(reverse('mainapp:cabinet'))
