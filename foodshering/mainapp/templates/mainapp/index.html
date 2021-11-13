@@ -1,5 +1,50 @@
 {% extends 'mainapp/layouts/app.html' %}
 {% load static %}
 {% block content %}
-    <h3>1351</h3>
+<div class="frame">
+    <div class="content main">
+        <div class="main_left">
+            <div class="main_left_slider">
+                <div class="main_left_slider_title"></div>
+                <div class="main_left_slider_info">
+                    <div class="main_left_slider_info-text"></div>
+                    <a href="{% url 'authapp:login' %}">
+                        <div class="main_left_slider_info-button"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="main_left_info">
+                <div class="main_left_info-title big-title">
+                    Фудшеринг
+                </div>
+                <div class="main_left_info-text">
+                    экологическое движение, которое помогает организациям перестать выбрасывать еду,
+                    а людям – получать её бесплатно и помогать другим.
+                </div>
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="main_right_title">
+                <div class="main_right_title-text">
+                    Интересная статистика
+                </div>
+                <hr>
+            </div>
+            <div class="main_right_statistic-card">
+                <div class="main_right_statistic-card_title"></div>
+                <div class="main_right_statistic-card_info">
+                    <div class="main_right_statistic-card_info_image"></div>
+                    <div class="main_right_statistic-card_info_text"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="frame">
+    <div class="content">
+
+    </div>
+</div>
 {% endblock %}

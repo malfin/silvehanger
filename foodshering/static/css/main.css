@@ -1,0 +1,37 @@
+
+body {
+    margin: 0;
+    background: #F4F4F4;
+}
+
+div, input {
+    box-sizing: border-box;
+}
+
+.frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 960px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_left {
+    width: 640px;
+}
+
+.main_left {
+    width: 290px;
+    height: 525px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background: #fff;
+}
