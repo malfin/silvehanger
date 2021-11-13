@@ -26,12 +26,12 @@
 <div class="menu">
     <div class="content  menu_content">
         <div class="menu_left">
-            <a href="{% url 'mainapp:index'%}"><div class="menu_left_logo"></div></a>
+            <a href="{% url 'mainapp:index' %}"><div class="menu_left_logo"></div></a>
         </div>
         <div class="menu_right">
-            <div class="menu_right_li"><a href="#">о нас</a></div>
-            <div class="menu_right_li"><a href="#">организациям</a></div>
-            <div class="menu_right_li"><a href="#">участникам</a></div>
+            <div class="menu_right_li"><a href="{% url 'mainapp:about' %}">о нас</a></div>
+            <div class="menu_right_li"><a href="{% url 'mainapp:organizations' %}">организациям</a></div>
+            <div class="menu_right_li"><a href="{% url 'mainapp:participants' %}">участникам</a></div>
             <div class="menu_right_li  statistic_button"><a href="#">статистика</a></div>
             {% if not user.is_authenticated %}
                 <div class="menu_right_li"><a href="{% url 'authapp:register' %}">регистрация</a></div>
