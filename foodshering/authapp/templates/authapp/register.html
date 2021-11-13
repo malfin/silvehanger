@@ -1,26 +1,48 @@
+{% extends 'mainapp/layouts/app.html' %}
 {% load static %}
+{% block content %}
+<div class="frame">
+    <div class="content">
+        <form method="post" action="{% url 'authapp:register' %}" class="form register_form">
 
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Подключение шрифтов   -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Подключение стилей   -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>Регистрация</title>
-</head>
-<body>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Зарегистрироваться</button>
+            {% csrf_token %}
+            <div class="register_form_first_step">
+                <div class='input-field'>
+                    <label for="id_username">Имя пользователя:</label>
+                    <input type="text" name="username" maxlength="150" autofocus="" class="form-control username" required="" id="id_username">
+                </div>
+                <div class='input-field'>
+                    <label for="id_first_name">Имя:</label>
+                    <input type="text" name="first_name" maxlength="128" class="form-control first_name" required="" id="id_first_name">
+                </div>
+                <div class='input-field'>
+                    <label for="id_last_name">Фамилия:</label>
+                    <input type="text" name="last_name" maxlength="128" class="form-control last_name" required="" id="id_last_name">
+                </div>
+                <div class="button button_next_step"> Продолжить </div>
+            </div>
 
-</form>
-</body>
-</html>
+            <div class="register_form_second_step" hidden>
+                <div class='input-field'>
+                    <label for="id_status">Кто вы?</label>
+                    <select name="status" class="form-control status" id="id_status">
+                        <option value="v">Волонтёр</option>
+                        <option value="c">Координатор</option>
+                    </select>
+                </div>
+                <div class='input-field'>
+                    <label for="id_email">Почта:</label>
+                    <input type="email" name="email" maxlength="254" class="form-control email" required="" id="id_email">
+                </div>
+                <div class='input-field'><label for="id_password1">Придумайте пароль:</label>
+                    <input type="password" name="password1" autocomplete="new-password" class="form-control password1" required="" id="id_password1">
+                </div>
+                <div class='input-field'><label for="id_password2">Подтвердите пароль:</label>
+                    <input type="password" name="password2" autocomplete="new-password" class="form-control password2" required="" id="id_password2">
+                </div>
+                <button>Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
