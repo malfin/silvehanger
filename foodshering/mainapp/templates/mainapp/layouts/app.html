@@ -13,10 +13,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Raleway:wght@400;500;700&display=swap"
           rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <!-- Подключение стилей   -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
     <!--    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
     <title>{{ title }} | Фудшеринг</title>
@@ -26,7 +30,9 @@
 <div class="menu">
     <div class="content  menu_content">
         <div class="menu_left">
-            <a href="{% url 'mainapp:index' %}"><div class="menu_left_logo"></div></a>
+            <a href="{% url 'mainapp:index' %}">
+                <div class="menu_left_logo"></div>
+            </a>
         </div>
         <div class="menu_right">
             <div class="menu_right_li"><a href="{% url 'mainapp:about' %}">о нас</a></div>
@@ -59,11 +65,26 @@
             <span>При использовании материалов ссылка на сайт обязательна.</span>
         </div>
         <div class="footer_item footer_right">
-            <a href="#"><div class="social_logo" style="background: url('{% static 'icons/footer/vk.svg' %}') center no-repeat; background-size: cover"></div></a>
-            <a href="#"><div class="social_logo" style="background: url('{% static 'icons/footer/inst.svg' %}') center no-repeat; background-size: cover"></div></a>
-            <a href="#"><div class="social_logo" style="background: url('{% static 'icons/footer/tt.svg' %}') center no-repeat; background-size: cover"></div></a>
-            <a href="#"><div class="social_logo" style="background: url('{% static 'icons/footer/fb.svg' %}') center no-repeat; background-size: cover"></div></a>
-            <a href="#"><div class="social_logo" style="background: url('{% static 'icons/footer/yt.svg' %}') center no-repeat; background-size: cover"></div></a>
+            <a href="#">
+                <div class="social_logo"
+                     style="background: url('{% static 'icons/footer/vk.svg' %}') center no-repeat; background-size: cover"></div>
+            </a>
+            <a href="#">
+                <div class="social_logo"
+                     style="background: url('{% static 'icons/footer/inst.svg' %}') center no-repeat; background-size: cover"></div>
+            </a>
+            <a href="#">
+                <div class="social_logo"
+                     style="background: url('{% static 'icons/footer/tt.svg' %}') center no-repeat; background-size: cover"></div>
+            </a>
+            <a href="#">
+                <div class="social_logo"
+                     style="background: url('{% static 'icons/footer/fb.svg' %}') center no-repeat; background-size: cover"></div>
+            </a>
+            <a href="#">
+                <div class="social_logo"
+                     style="background: url('{% static 'icons/footer/yt.svg' %}') center no-repeat; background-size: cover"></div>
+            </a>
         </div>
     </div>
 </div>
