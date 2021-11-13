@@ -31,16 +31,32 @@
             </div>
             <div class="main_right">
                 <div class="main_right_title">
-                    <div class="main_right_title-text">
+                    <div class="main_right_title-text h1 big-text">
                         Интересная статистика
                     </div>
                     <hr>
                 </div>
-                <div class="main_right_statistic-card">
-                    <div class="main_right_statistic-card_title"></div>
-                    <div class="main_right_statistic-card_info">
-                        <div class="main_right_statistic-card_info_image"></div>
-                        <div class="main_right_statistic-card_info_text"></div>
+                <div class="main_right_statistic-cards">
+                    <div class="main_right_statistic-card">
+                        <div class="main_right_statistic-card_title">Спасено еды за неделю:</div>
+                        <div class="main_right_statistic-card_info">
+                            <div class="main_right_statistic-card_info_image" style="background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, #303030 100%), url('{% static 'images/statistic/pack.jpg' %}')  top no-repeat; background-size: cover"></div>
+                            <div class="main_right_statistic-card_info_text h1">10кг</div>
+                        </div>
+                    </div>
+                    <div class="main_right_statistic-card">
+                        <div class="main_right_statistic-card_title">Волонтёров участвует:</div>
+                        <div class="main_right_statistic-card_info">
+                            <div class="main_right_statistic-card_info_image" style="background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, #303030 100%), url('{% static 'images/statistic/voulonteir.jpg' %}')  top no-repeat; background-size: cover"></div>
+                            <div class="main_right_statistic-card_info_text h1">1472</div>
+                        </div>
+                    </div>
+                    <div class="main_right_statistic-card">
+                        <div class="main_right_statistic-card_title">Спасено еды за год:</div>
+                        <div class="main_right_statistic-card_info">
+                            <div class="main_right_statistic-card_info_image" style="background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, #303030 100%), url('{% static 'images/statistic/prods.jpeg' %}')  top no-repeat; background-size: cover"></div>
+                            <div class="main_right_statistic-card_info_text h1">90 тонн </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,8 +64,8 @@
         </div>
     </div>
     <div class="frame white_frame">
-        <div class="content">
-
+        <div class="content pre_footer">
+            Фудшеринг существует в <b>Москве</b> и <b>Санкт-Петербурге</b> с 2015 года. Мы вывозим непроданную вовремя, но еще пригодную еду и распределяем ее тем, кому она нужна. Мы изучили европейский опыт фудшеринга и предлагаем компаниям экологично и с пользой избавиться от пищевой продукции, которую нельзя реализовать, и вместе с нами помогать людям и всей планете.
         </div>
     </div>
 {% endblock %}
