@@ -1,25 +1,51 @@
 {% extends 'mainapp/layouts/app.html' %}
 {% load static %}
 {% block content %}
-    <div class="frame white_frame">
-        <div class="content">
-            {% if group %}
-                <h3>Волонётры</h3>
-                {% for item in group %}
-                    <h3>Координатор: {{ item.user_coordintator.first_name }}
-                        | {{ item.user_coordintator.last_name }}</h3>
-                    <ul>
-                        {% for volonters in item.users_volonter.all %}
-                            <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+    <div class="frame">
+        <div class="content cabinet_frame">
+
+                <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span></div>
+                {% if group %}
+                    <div class="cabinet_menu">
+                        <div class="cabinet_menu-item h1"> Личные данные</div>
+                        <div class="cabinet_menu-item h1 active">Группа</div>
+                        <div class="cabinet_menu-item h1"> Нерешенные вопросы</div>
+                    </div>
+                    <div class="cabinet-group">
+                        <div class="cabinet-group_title sm-title h1">Твоя группа:</div>
+                        {% for item in group %}
+                            <div class="cabinet-group_content">
+                                <div class="cabinet-group_content-coord">
+                                    <div class="cabinet-group_content_coord-image">
+                                        Координатор
+                                    </div>
+                                    <div class="cabinet-group_content_coord-info">
+                                        <div class="cabinet-group_content_coord-name">
+                                            {{ item.user_coordintator.first_name }} {{ item.user_coordintator.last_name }}
+                                        </div>
+                                        <div class="cabinet-group_content_coord-phone">+7 (999) 5005353</div>
+                                    </div>
+                                </div>
+                                <div class="cabinet-group_content-vol">
+                                    <div class="cabinet-group_voloneurs">
+                                        {% for volonters in item.users_volonter.all %}
+
+                                        {{ volonters.first_name }} {{ volonters.last_name }}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="cabinet-group_buttons">
+                                        <div class="cabinet-group_buttons_row"></div>
+                                        <div class="cabinet-group_buttons_row"></div>
+                                    </div>
+                                </div>
+                            </div>
                         {% endfor %}
-                    </ul>
-                    {% for volonters in item.users_volonter.all %}
-                        {% if not volonters.confirm %}
-                            <h3>Ты не выбрал группу</h3>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            {% endif %}
+                    </div>
+                {% endif %}
+                {% if not volonters.confirm %}
+                    <div class="h1">Ты пока что не в группе</div>
+                {% endif %}
+
         </div>
     </div>
 {% endblock %}
