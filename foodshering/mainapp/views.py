@@ -87,6 +87,12 @@ def create_group(request):
         return HttpResponseRedirect(reverse('mainapp:index'))
 
 
+def delete_group(request, pk):
+    group = get_object_or_404(Group, id=pk)
+    group.delete()
+    return HttpResponseRedirect(reverse('mainapp:cabinet'))
+
+
 def about(request):
     return render(request, 'mainapp/about.html')
 

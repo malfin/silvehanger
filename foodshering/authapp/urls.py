@@ -12,4 +12,6 @@ urlpatterns = [
 
     path('register/', authapp.register, name='register'),
 
+    path('register/', authapp., name='register'),
+
 ]

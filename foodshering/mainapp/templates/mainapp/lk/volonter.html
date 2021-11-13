@@ -3,93 +3,106 @@
 {% block content %}
     <div class="frame">
         <div class="content cabinet_frame">
-
-
-                {% if volonters.confirm %}
-                    <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span></div>
-                    {% if group %}
-                        <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span></div>
-                        <div class="cabinet_menu">
-                            <div class="cabinet_menu-item h1"> Личные данные</div>
-                            <div class="cabinet_menu-item h1 active">Группа</div>
-                            <div class="cabinet_menu-item h1"> Нерешенные вопросы</div>
-                        </div>
-                        <div class="cabinet-group">
+            {% if volonters.confirm %}
+                <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span>
+                </div>
+                {% if group %}
+                    <div class="md-title h1">Волонтёр - <span class="marked-text"> {{ request.user.first_name }}</span>
+                    </div>
+                    <div class="cabinet_menu">
+                        <div class="cabinet_menu-item h1"> Личные данные</div>
+                        <div class="cabinet_menu-item h1 active">Группа</div>
+                        <div class="cabinet_menu-item h1"> Нерешенные вопросы</div>
+                    </div>
+                    <div class="cabinet-group">
                         <div class="cabinet-group_title sm-title h1">Твоя группа:</div>
                         {% for item in group %}
-                        <div class="cabinet-group_content">
-                            <div class="cabinet-group_content-coord">
-                                <div class="cabinet-group_content_coord-image">
-                                    Координатор
-                                </div>
-                                <div class="cabinet-group_content_coord-info">
-                                    <div class="cabinet-group_content_coord-name">
-                                        {{ item.user_coordintator.first_name }} {{ item.user_coordintator.last_name }}
+                            <div class="cabinet-group_content">
+                                <div class="cabinet-group_content-coord">
+                                    <div class="cabinet-group_content_coord-image">
+                                        Координатор
                                     </div>
-                                    <div class="cabinet-group_content_coord-phone">+7 (999) 5005353</div>
+                                    <div class="cabinet-group_content_coord-info">
+                                        <div class="cabinet-group_content_coord-name">
+                                            {{ item.user_coordintator.first_name }} {{ item.user_coordintator.last_name }}
+                                        </div>
+                                        <div class="cabinet-group_content_coord-phone">+7 (999) 5005353</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cabinet-group_content-vol">
-                                <div class="cabinet-group_voloneurs">
-                                    {% for volonters in item.users_volonter.all %}
+                                <div class="cabinet-group_content-vol">
+                                    <div class="cabinet-group_voloneurs">
+                                        {% for volonters in item.users_volonter.all %}
 
-                                    {{ volonters.first_name }} {{ volonters.last_name }}
-                                    {% endfor %}
-                                </div>
-                                <div class="cabinet-group_buttons">
-                                    <div class="cabinet-group_buttons_row"></div>
-                                    <div class="cabinet-group_buttons_row"></div>
+                                            {{ volonters.first_name }} {{ volonters.last_name }}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="cabinet-group_buttons">
+                                        <div class="cabinet-group_buttons_row"></div>
+                                        <div class="cabinet-group_buttons_row"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         {% endfor %}
                     </div>
-                    {% endif %}
-                {% else %}
+                {% endif %}
+            {% else %}
                 <div class="cabinet_after-regist">
                     <div class="cabinet_after-regist_title">
                         <div class="sm-title h1">Поздравляем с регистрацией!</div>
                         <div class="h1">Теперь вам доступно прохождение курса волонтёра Фудшеринга!</div>
                     </div>
                     <div class="cabinet_after-regist_button"> Начать обучение!</div>
-                    <div class="cabinet_after-regist_text">Пройдите обучающий курс и успешно  ответьте на 12 вопросов для  того чтобы стать волонтёром Фудшеринга</div>
+                    <div class="cabinet_after-regist_text">Пройдите обучающий курс и успешно ответьте на 12 вопросов для
+                        того чтобы стать волонтёром Фудшеринга
+                    </div>
                     <div class="cabinet_after-regist_text big-text h1">Почему быть волонтёром это хорошо?</div>
                     <div class="cabinet_after-regist_pluses">
                         <div class="cabinet_after-regist_plus">
-                            <div class="cabinet_after-regist_plus_image">
-                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect y="18" width="50" height="14" fill="#31D6AE"/>
-                                    <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
-                                </svg>
-                            </div>
+                            <a href="{% url '' %}">
+                                <div class="cabinet_after-regist_plus_image">
+                                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="18" width="50" height="14" fill="#31D6AE"/>
+                                        <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
+                                    </svg>
+
+                                </div>
+                            </a>
                             <div class="cabinet_after-regist_plus_title big-text h1"> ПЕРВЫЙ ПЛЮС</div>
                             <div class="cabinet_after-regist_plus_text">
-                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть нужда
+                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть
+                                нужда
                             </div>
                         </div>
                         <div class="cabinet_after-regist_plus">
                             <div class="cabinet_after-regist_plus_image">
 
-                                <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="57" height="56" viewBox="0 0 57 56" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect x="7" y="24" width="50" height="14" fill="#515151"/>
-                                    <rect x="39" y="6" width="50" height="14" transform="rotate(90 39 6)" fill="#515151"/>
+                                    <rect x="39" y="6" width="50" height="14" transform="rotate(90 39 6)"
+                                          fill="#515151"/>
                                     <rect y="18" width="50" height="14" fill="#31D6AE"/>
                                     <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
                                 </svg>
                             </div>
                             <div class="cabinet_after-regist_plus_title big-text h1">ВТОРОЙ ПЛЮС</div>
                             <div class="cabinet_after-regist_plus_text">
-                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть нужда
+                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть
+                                нужда
                             </div>
                         </div>
                         <div class="cabinet_after-regist_plus">
                             <div class="cabinet_after-regist_plus_image">
 
-                                <svg width="64" height="61" viewBox="0 0 64 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="64" height="61" viewBox="0 0 64 61" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
                                     <rect x="14" y="29" width="50" height="14" fill="#515151"/>
-                                    <rect x="46" y="11" width="50" height="14" transform="rotate(90 46 11)" fill="#515151"/>
+                                    <rect x="46" y="11" width="50" height="14" transform="rotate(90 46 11)"
+                                          fill="#515151"/>
                                     <rect x="7" y="24" width="50" height="14" fill="#36826F"/>
-                                    <rect x="39" y="6" width="50" height="14" transform="rotate(90 39 6)" fill="#36826F"/>
+                                    <rect x="39" y="6" width="50" height="14" transform="rotate(90 39 6)"
+                                          fill="#36826F"/>
                                     <rect y="18" width="50" height="14" fill="#31D6AE"/>
                                     <rect x="32" width="50" height="14" transform="rotate(90 32 0)" fill="#31D6AE"/>
                                 </svg>
@@ -97,13 +110,14 @@
                             </div>
                             <div class="cabinet_after-regist_plus_title big-text h1">ТРЕТИЙ ПЛЮС</div>
                             <div class="cabinet_after-regist_plus_text">
-                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть нужда
+                                Обьяснение почему это плюс а не минус, и возможно почему это важно, если на то есть
+                                нужда
                             </div>
                         </div>
                     </div>
 
                 </div>
-                {% endif %}
+            {% endif %}
 
         </div>
     </div>
