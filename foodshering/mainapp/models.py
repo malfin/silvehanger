@@ -14,7 +14,7 @@ class Group(models.Model):
 
 class Product(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name='Благотворитель')
-    name = models.CharField(verbose_name='Наименование')
+    name = models.CharField(verbose_name='Наименование', max_length=64)
     colicestvo = models.FloatField(verbose_name='Количество/вес')
     price = models.FloatField(verbose_name='Цена')
     srok = models.DateField(verbose_name='Срок годности')
