@@ -7,4 +7,4 @@ for row in table.rows:
     string = ''
     for cell in row.cells:
         string = string + cell.text + ' '
-    print(string)
+    print(string.replace('№', '').split(' '))

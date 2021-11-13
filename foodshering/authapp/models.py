@@ -1,16 +1,7 @@
 from django.contrib.auth.models import AbstractUser, User
+from django.core.validators import RegexValidator
 from django.db import models
 
-
-# Profile,
-#  Пройти тест для подтверждженеи аккаунта
-# Электронная почта
-# Имя и фамилия, отчество
-# Город
-# Основной адрес (улица и дом)
-# Ссылка на страницу «ВКонтакте»
-# Телефон
-# Дата рождения
 
 class Status(models.TextChoices):
     Volunteer = 'v', 'Волонтёр'
@@ -23,6 +14,9 @@ class UserProfile(AbstractUser):
     last_name = models.CharField(verbose_name='Фамилия', max_length=128)
     status = models.CharField(verbose_name='Статус', choices=Status.choices, default=Status.Volunteer, max_length=1)
     confirm = models.BooleanField(verbose_name='Подтверждён', default=False)
+
+    address = models.CharField(verbose_name='Адрес', max_length=128)
+    phone_number = models.CharField(max_length=12, verbose_name="Номер телефона")
 
     def __str__(self):
         return f'{self.username} | {self.first_name} | {self.last_name}'
