@@ -38,6 +38,7 @@
                 <div class="menu_right_li"><a href="{% url 'authapp:login' %}">вход</a></div>
             {% else %}
                 <div class="menu_right_li"><a href="#">{{ request.user.username }}</a></div>
+                <div class="menu_right_li"><a href="{% url 'authapp:logout' %}">Выйти</a></div>
             {% endif %}
 
         </div>
