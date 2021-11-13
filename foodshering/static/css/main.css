@@ -198,6 +198,11 @@ div, input {
     height: 30px;
 }
 
+.form_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .register_form_buttons {
     width: 100%;
     display: flex;

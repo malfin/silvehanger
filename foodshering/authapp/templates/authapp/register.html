@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
 <div class="frame">
-    <div class="content">
+    <div class="content form_content">
         <form method="post" action="{% url 'authapp:register' %}" class="form register_form">
+            {% csrf_token %}
             <div class="form-title">
                 <div class="form-title_text h1">Регистрация</div>
                 <div class="form-title_step h1">1/2</div>
             </div>
-            {% csrf_token %}
             <div class="register_form_first_step dis_block">
                 <div class='input-field'>
                     <label for="id_username">Имя пользователя:</label>

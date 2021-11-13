@@ -33,4 +33,10 @@ window.onload = function (ev) {
             document.querySelector('.true_button_register').click();
         });
     }
+    if (document.location.pathname === '/account/login/') {
+        let registerButton = document.querySelector('.button_register');
+            registerButton.addEventListener('click', function (ev) {
+            document.querySelector('.true_button_register').click();
+        });
+    }
 };
