@@ -6,8 +6,12 @@ window.onload = function (ev) {
 
         let nextButton = document.querySelector('.button_next_step');
         nextButton.addEventListener('click', function (ev) {
-            firstStep.setAttribute('hidden', 'true');
-            secondStep.removeAttribute('hidden');
+            if (firstStep.classList.contains('dis_block') && secondStep.classList.contains('dis_none')) {
+                firstStep.classList.remove('dis_block');
+                firstStep.classList.add('dis_none');
+                secondStep.classList.remove('dis_none');
+                secondStep.classList.add('dis_block');
+            }
         });
     }
 };

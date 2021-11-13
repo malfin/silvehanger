@@ -6,7 +6,7 @@
         <form method="post" action="{% url 'authapp:register' %}" class="form register_form">
 
             {% csrf_token %}
-            <div class="register_form_first_step">
+            <div class="register_form_first_step dis_block">
                 <div class='input-field'>
                     <label for="id_username">Имя пользователя:</label>
                     <input type="text" name="username" maxlength="150" autofocus="" class="form-control username" required="" id="id_username">
@@ -22,7 +22,7 @@
                 <div class="button button_next_step"> Продолжить </div>
             </div>
 
-            <div class="register_form_second_step" hidden>
+            <div class="register_form_second_step dis_none" >
                 <div class='input-field'>
                     <label for="id_status">Кто вы?</label>
                     <select name="status" class="form-control status" id="id_status">
