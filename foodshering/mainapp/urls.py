@@ -12,4 +12,6 @@ urlpatterns = [
     path('organizations/', mainapp.organizations, name='organizations'),
     path('participants/', mainapp.participants, name='participants'),
 
+    path('cabinet/group/create/', mainapp.create_group, name='create_group'),
+
 ]
