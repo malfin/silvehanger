@@ -39,3 +39,10 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+
+class LoadFiles(models.Model):
+    file = models.FileField(verbose_name='файл', upload_to='file')
+    date = models.DateField(verbose_name='дата загрузки', auto_now=True)
+
+    def __str__(self):
+        return f'{self.date}'

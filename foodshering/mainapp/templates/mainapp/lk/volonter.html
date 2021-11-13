@@ -3,16 +3,23 @@
 {% block content %}
     <div class="frame white_frame">
         <div class="content">
-            <h3>Волонётры</h3>
-            {% for item in group %}
-                <h3>Координатор: {{ item.user_coordintator.first_name }}
-                    | {{ item.user_coordintator.last_name }}</h3>
-                <ul>
+            {% if group %}
+                <h3>Волонётры</h3>
+                {% for item in group %}
+                    <h3>Координатор: {{ item.user_coordintator.first_name }}
+                        | {{ item.user_coordintator.last_name }}</h3>
+                    <ul>
+                        {% for volonters in item.users_volonter.all %}
+                            <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+                        {% endfor %}
+                    </ul>
                     {% for volonters in item.users_volonter.all %}
-                        <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+                        {% if not volonters.confirm %}
+                            <h3>Ты не выбрал группу</h3>
+                        {% endif %}
                     {% endfor %}
-                </ul>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
