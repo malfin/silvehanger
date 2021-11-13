@@ -12,7 +12,7 @@ def login(request):
         form = LoginForm(data=request.POST)
         if form.is_valid():
             auth.login(request, form.get_user())
-            return HttpResponseRedirect(reverse(''))
+            return HttpResponseRedirect(reverse('mainapp:index'))
     else:
         form = LoginForm()
     content = {
