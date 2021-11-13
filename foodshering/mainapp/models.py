@@ -19,3 +19,6 @@ class Product(models.Model):
     price = models.FloatField(verbose_name='Цена')
     srok = models.DateField(verbose_name='Срок годности')
     desc = models.TextField(blank=True)
+
+    def __str__(self):
+        return f'{self.user}, Продукт: {self.name}'
