@@ -11,25 +11,25 @@ def index(request):
 
 
 def cabinet(request):
-    if Group.objects.filter(users_volonter=request.user):
-        group = Group.objects.filter(users_volonter=request.user)
+    if Group.objects.filter(user_coordintator=request.user):
+        group = Group.objects.filter(user_coordintator=request.user)
         content = {
-            'title': 'Личный кабинет | Волонтёр',
+            'title': 'Личный кабинет | координатора',
             'group': group,
         }
-        return render(request, 'mainapp/lk/volonter.html', content)
+        return render(request, 'mainapp/lk/coordinator.html', content)
     elif request.user.is_staff:
         content = {
             'title': 'Личный кабинет | Администратор',
         }
         return render(request, 'mainapp/lk/admin.html', content)
-    elif Group.objects.filter(user_coordintator=request.user):
-        group = Group.objects.filter(user_coordintator=request.user)
+    elif Group.objects.filter(users_volonter=request.user):
+        group = Group.objects.filter(users_volonter=request.user)
         content = {
-            'title': 'Личный кабинет | Координатор',
+            'title': 'Личный кабинет | волонтёра',
             'group': group,
         }
-        return render(request, 'mainapp/lk/coordinator.html', content)
+        return render(request, 'mainapp/lk/volonter.html', content)
     else:
         content = {
             'title': 'Личный кабинет | Ошибка',
@@ -38,21 +38,12 @@ def cabinet(request):
 
 
 def about(request):
-    content = {
-        'title': 'Фудшеринг | О нас',
-    }
-    return render(request, 'mainapp/about.html', content)
+    return render(request, 'mainapp/about.html')
 
 
 def organizations(request):
-    content = {
-        'title': 'Фудшеринг | Организациям',
-    }
-    return render(request, 'mainapp/organizations.html', content)
+    return render(request, 'mainapp/organizations.html')
 
 
 def participants(request):
-    content = {
-        'title': 'Фудшеринг | Учасникам',
-    }
-    return render(request, 'mainapp/participants.html', content)
+    return render(request, 'mainapp/participants.html')

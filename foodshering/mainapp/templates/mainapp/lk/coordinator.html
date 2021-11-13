@@ -4,6 +4,14 @@
     <div class="frame white_frame">
         <div class="content">
             <h3>Координатор</h3>
+            {% for item in group %}
+                <h3>Название: {{ item.name }}</h3>
+                <ul>
+                    {% for volonters in item.users_volonter.all %}
+                        <li>Имя: {{ volonters.first_name }}, Фамилия: {{ volonters.last_name }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
