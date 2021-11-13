@@ -9,4 +9,4 @@ class Group(models.Model):
     user_coordintator = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='coordinator')
 
     def __str__(self):
-        return f'{self.name} | {self.users_volonter}'
+        return f'{self.name}, Координатор: {self.user_coordintator.username}'
