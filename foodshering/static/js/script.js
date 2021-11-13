@@ -7,6 +7,8 @@ window.onload = function (ev) {
 
         let nextButton = document.querySelector('.button_next_step');
         let backButton = document.querySelector('.button_back_step');
+        let registerButton = document.querySelector('.button_register');
+
         nextButton.addEventListener('click', function (ev) {
             if (firstStep.classList.contains('dis_block') && secondStep.classList.contains('dis_none')) {
                 firstStep.classList.remove('dis_block');
@@ -25,6 +27,10 @@ window.onload = function (ev) {
                 secondStep.classList.add('dis_none');
                 stepBlock.innerText = '1/2';
             }
+        });
+
+        registerButton.addEventListener('click', function (ev) {
+            document.querySelector('.true_button_register').click();
         });
     }
 };

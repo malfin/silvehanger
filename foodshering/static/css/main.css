@@ -27,13 +27,14 @@ div, input {
 }
 
 .button {
-
     width: 170px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #F4F4F4;
+    cursor: pointer;
+    transition: 200ms;
 }
 
 .menu {
@@ -202,5 +203,21 @@ div, input {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.button_register {
+    width: 200px;
+    background: #31D6AE;
+    font-weight: bold;
+    color: #F4F4F4;
+}
+
+.button_register:hover {
+
+    background: #3ee3a1;
+}
+.button_register:active {
+    background: #238765;
+
 }
 
