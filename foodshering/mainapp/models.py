@@ -10,3 +10,12 @@ class Group(models.Model):
 
     def __str__(self):
         return f'{self.name}, Координатор: {self.user_coordintator.username}'
+
+
+class Product(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name='Благотворитель')
+    name = models.CharField(verbose_name='Наименование')
+    colicestvo = models.FloatField(verbose_name='Количество/вес')
+    price = models.FloatField(verbose_name='Цена')
+    srok = models.DateField(verbose_name='Срок годности')
+    desc = models.TextField(blank=True)
