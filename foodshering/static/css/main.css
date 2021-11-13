@@ -156,6 +156,12 @@ a {
     height: 35px;
     transition: 100ms ease-out;
 }
+.social_logo_zen {
+    width: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .social_logo:hover {
     transform: scale(1.2, 1.2);
 }
