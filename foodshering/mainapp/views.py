@@ -35,3 +35,15 @@ def cabinet(request):
             'title': 'Личный кабинет | Ошибка',
         }
         return render(request, 'mainapp/lk/error.html', content)
+
+
+def about(request):
+    return render(request, 'mainapp/about.html')
+
+
+def organizations(request):
+    return render(request, 'mainapp/organizations.html')
+
+
+def participants(request):
+    return render(request, 'mainapp/participants.html')
