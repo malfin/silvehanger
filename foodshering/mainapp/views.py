@@ -3,8 +3,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
-from mainapp.forms import CreateGroupForm
-from mainapp.models import Group
+from mainapp.forms import CreateGroupForm, LoadFileForm
+from mainapp.models import Group, LoadFiles
 
 
 def index(request):
@@ -115,3 +115,17 @@ def organizations(request):
 
 def participants(request):
     return render(request, 'mainapp/participants.html')
+
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = LoadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('mainapp:cabinet'))
+    else:
+        form = LoadFileForm()
+
+    return render(request, 'mainapp/lk/cabinet.html', {
+        'form': form
+    })
