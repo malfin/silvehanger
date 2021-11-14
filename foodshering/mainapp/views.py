@@ -1,8 +1,10 @@
 from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
+from authapp.forms import ChangePassword, ChangeForm
 from mainapp.forms import CreateGroupForm, LoadFileForm
 from mainapp.models import Group, LoadFiles
 
@@ -103,6 +105,48 @@ def delete_group(request, pk):
     group = get_object_or_404(Group, id=pk)
     group.delete()
     return HttpResponseRedirect(reverse('mainapp:cabinet'))
+
+
+def profile(request):
+    context = {
+        'title': 'личные данные',
+    }
+    return render(request, 'mainapp/lk/profile/index.html', context)
+
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = ChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Вы успешно изменили профиль!')
+            return HttpResponseRedirect(reverse('mainapp:profile'))
+    else:
+        form = ChangeForm(instance=request.user)
+    context = {
+        'title': 'изменить профиль',
+        'form': form,
+    }
+    return render(request, 'mainapp/lk/profile/edit.html', context)
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = ChangePassword(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, 'Вы успешно изменили пароль!')
+            return HttpResponseRedirect(reverse('mainapp:profile'))
+        else:
+            messages.error(request, 'Пожалуйста, исправьте ошибку ниже!')
+    else:
+        form = ChangePassword(user=request.user)
+    context = {
+        'title': 'изменить пароль',
+        'form': form,
+    }
+    return render(request, 'mainapp/lk/profile/edit.html', context)
 
 
 def about(request):
