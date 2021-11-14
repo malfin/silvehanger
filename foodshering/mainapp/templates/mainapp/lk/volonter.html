@@ -65,7 +65,14 @@
                                         </div>
                                         <div class="cabinet-group_buttons_row">
                                             <div class="button cabinet_button button_green">Замениться</div>
-                                            <div class="button cabinet_button button_black">Загрузить акт приёма</div>
+                                            <div class="button cabinet_button button_black">
+                                                <form method="post" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    {{ form.as_p }}
+                                                    <button type="submit">Upload</button>
+                                                </form>
+                                                Загрузить акт приёма
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
