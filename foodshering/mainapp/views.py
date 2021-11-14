@@ -41,6 +41,18 @@ def cabinet(request):
         return render(request, 'mainapp/lk/error.html', content)
 
 
+def group_info(request, pk):
+    if request.user.is_staff:
+        group = Group.objects.filter(id=pk)
+        context = {
+            'group': group,
+            'page_title': 'информация о группе'
+        }
+        return render(request, 'mainapp/group/index.html', context)
+    else:
+        return HttpResponseRedirect(reverse('mainapp:cabinet'))
+
+
 def edit_group(request, pk):
     if request.user.status == 'c' or request.user.is_staff:
         group = get_object_or_404(Group, id=pk)
