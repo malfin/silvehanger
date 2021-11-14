@@ -56,3 +56,6 @@ def confirm_user(request, pk):
     user = get_object_or_404(UserProfile, id=pk)
     user.set_confirm()
     return HttpResponseRedirect(reverse('mainapp:cabinet'))
+
+
+
