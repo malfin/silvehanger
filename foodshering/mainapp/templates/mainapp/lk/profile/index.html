@@ -1,0 +1,23 @@
+{% extends 'mainapp/layouts/app.html' %}
+{% load static %}
+{% block content %}
+    <div class="frame">
+        <div class="content cabinet_frame">
+            {% if user.is_stuff %}
+                <h3>Администратор</h3>
+            {% elif user.status == 'c' %}
+                <h3>Координатор</h3>
+            {% elif user.status == 'v' %}
+                <h3>Волонтёр</h3>
+            {% endif %}
+            <h3>ID: {{ user.id }}</h3>
+            <h3>Имя пользователя: {{ user.username }}</h3>
+            <h3>Email: {{ user.email }}</h3>
+            <h3>ФИО: {{ user.first_name }} {{ user.last_name }}</h3>
+            <h3>Адрес: {{ user.address }}</h3>
+            <h3>Номер телефона: {{ user.phone_number }}</h3>
+            <a href="{% url 'mainapp:edit_profile' %}">Редактировать профиль</a>
+            <a href="{% url 'mainapp:change_password' %}">Изменить пароль</a>
+        </div>
+    </div>
+{% endblock %}

@@ -34,7 +34,7 @@ class RegisterForm(UserCreationForm, forms.ModelForm):
 class ChangeForm(UserChangeForm):
     class Meta:
         model = UserProfile
-        fields = ('username', 'first_name', 'last_name', 'email', 'address')
+        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'phone_number')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

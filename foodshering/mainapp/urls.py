@@ -8,6 +8,11 @@ urlpatterns = [
 
     path('', mainapp.index, name='index'),
     path('cabinet/', mainapp.cabinet, name='cabinet'),
+
+    path('cabinet/profile/', mainapp.profile, name='profile'),
+    path('cabinet/profile/edit/', mainapp.edit_profile, name='edit_profile'),
+    path('cabinet/profile/edit/change_password/', mainapp.change_password, name='change_password'),
+
     path('about/', mainapp.about, name='about'),
     path('organizations/', mainapp.organizations, name='organizations'),
     path('participants/', mainapp.participants, name='participants'),
