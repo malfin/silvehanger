@@ -63,4 +63,7 @@ $(document).ready(function () {
         placeholder: 'Выберите...',
         maximumSelectionLength: 7,
     });
+    if ($('input[name="username"]')) {
+
+    }
 });

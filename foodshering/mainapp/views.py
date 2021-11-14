@@ -31,9 +31,15 @@ def cabinet(request):
         return render(request, 'mainapp/lk/admin.html', content)
     elif request.user.status == 'v':
         group = Group.objects.filter(users_volonter=request.user)
+        if request.method == 'POST':
+            form = LoadFileForm(request.POST, request.FILES)
+            form.save()
+        else:
+            form = LoadFileForm()
         content = {
             'title': 'Личный кабинет | волонтёра',
             'group': group,
+            'form': form,
         }
         return render(request, 'mainapp/lk/volonter.html', content)
     else:
@@ -170,6 +176,6 @@ def model_form_upload(request):
     else:
         form = LoadFileForm()
 
-    return render(request, 'mainapp/lk/cabinet.html', {
+    return render(request, 'mainapp/lk/upload_files.html', {
         'form': form
     })
